@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200
   },
-  price: {
+  subtitle: {
     color: colors.secondary,
     fontWeight: 'bold'
   },

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 
 import AccountScreen from './app/screens/AccountScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
@@ -19,6 +20,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function App() {
   return (
-    <AccountScreen />
+    <ListingsScreen />
   );
 }

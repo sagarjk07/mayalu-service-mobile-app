@@ -5,7 +5,7 @@ import AppText from '../AppText';
 
 import styles from './styles';
 
-function Card({ title, price, image }) {
+function Card({ title, subtitle, image }) {
   return (
     <View style={styles.card}>
       <Image
@@ -14,7 +14,7 @@ function Card({ title, price, image }) {
       />
       <View style={styles.detailContainer}>
         <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.price}>{price}</AppText>
+        <AppText style={styles.subtitle}>{subtitle}</AppText>
       </View>
     </View>
   )
