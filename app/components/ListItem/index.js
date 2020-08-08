@@ -8,7 +8,7 @@ import AppText from '../AppText';
 import styles from './styles';
 import colors from '../../config/colors';
 
-function ListItem({ title, subtitle, image, onPress, renderRightActions }) {
+function ListItem({ title, subtitle, image, onPress, renderRightActions, IconComponent }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight
@@ -16,10 +16,11 @@ function ListItem({ title, subtitle, image, onPress, renderRightActions }) {
         underlayColor={colors.light}
       >
         <View style={styles.container}>
-          <Image style={styles.image} source={image} />
-          <View>
+          {IconComponent}
+          {image && <Image style={styles.image} source={image} />}
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
-            <AppText style={styles.subtitle}>{subtitle}</AppText>
+            {subtitle && <AppText style={styles.subtitle}>{subtitle}</AppText>}
           </View>
         </View>
       </TouchableHighlight>

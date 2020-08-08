@@ -5,7 +5,13 @@ import colors from '../../config/colors';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 10
+    padding: 10,
+    backgroundColor: colors.white
+
+  },
+  detailsContainer: {
+    marginLeft: 10,
+    justifyContent: 'center'
   },
   image: {
     width: 70,
@@ -18,7 +24,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: '500',
-  }
+  },
+
 });
 
 export default styles;
