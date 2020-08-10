@@ -3,8 +3,8 @@ import { View } from 'react-native';
 
 import styles from './styles';
 
-function ListItemSeperator() {
+function ListItemSeparator() {
   return <View style={styles.seperator} />
 }
 
-export default ListItemSeperator;
+export default ListItemSeparator;

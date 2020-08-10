@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10
   },
+  placeholder: {
+    flex: 1,
+    color: defaultStyles.colors.medium
+  },
   text: {
     flex: 1,
   },

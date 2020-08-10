@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   textInput: {
+    flex: 1,
     fontSize: 18,
     color: defaultStyles.colors.dark,
     fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir'
