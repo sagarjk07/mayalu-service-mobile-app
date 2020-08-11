@@ -41,14 +41,14 @@ function MessagesScreen(props) {
   };
 
   return (
-    <Screen style={styles.container}>
+    <Screen>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
-            subTitle={item.description}
+            subtitle={item.description}
             image={item.image}
             onPress={() => console.log("Message selected", item)}
             renderRightActions={() => (
@@ -74,9 +74,7 @@ function MessagesScreen(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
+
 });
 
 export default MessagesScreen;
