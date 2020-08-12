@@ -31,7 +31,7 @@ function AccountScreen(props) {
         <ListItem
           title={'Sujit Kumar Libi'}
           subtitle={'sujit@pandalytic.com'}
-          image={require('../assets/mosh.jpg')}
+          image={require('../assets/default.png')}
         />
       </View>
       <View style={styles.container}>

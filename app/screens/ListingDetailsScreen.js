@@ -20,7 +20,7 @@ function ListingDetailsScreen(props) {
           <ListItem
             subtitle={'5 Listing'}
             title={'Sujit Kumar Libi'}
-            image={require('../assets/mosh.jpg')}
+            image={require('../assets/default.png')}
           />
         </View>
       </View>
