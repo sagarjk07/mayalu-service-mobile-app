@@ -8,6 +8,8 @@ import { ListItem, ListItemSeparator } from '../components/Lists';
 import colors from '../config/colors';
 import routes from '../navigation/routes';
 
+import useAuth from '../auth/useAuth';
+
 const menuItems = [
   {
     title: 'My Listings',
@@ -27,12 +29,14 @@ const menuItems = [
 ]
 
 function AccountScreen({ navigation }) {
+  const { user, logout } = useAuth();
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
-          title={'Sujit Kumar Libi'}
-          subtitle={'sujit@pandalytic.com'}
+          title={user.name}
+          subtitle={user.email}
           image={require('../assets/default.png')}
         />
       </View>
@@ -58,6 +62,7 @@ function AccountScreen({ navigation }) {
           IconComponent={
             <Icon name={'logout'} backgroundColor={colors.warning} />
           }
+          onPress={() => logout()}
         />
       </View>
     </Screen>
