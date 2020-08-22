@@ -11,26 +11,18 @@ import routes from '../navigation/routes';
 import useAuth from '../auth/useAuth';
 
 const menuItems = [
-  // {
-  //   title: 'My Listings',
-  //   icon: {
-  //     name: 'format-list-bulleted',
-  //     backgroundColor: colors.primary
-  //   }
-  // },
+  {
+    title: 'My Listings',
+    icon: {
+      name: 'format-list-bulleted',
+      backgroundColor: colors.primary
+    }
+  },
   {
     title: 'My Messages',
     icon: {
       name: 'email',
-      backgroundColor: colors.primary
-    },
-    targetScreen: routes.MESSAGES
-  },
-  {
-    title: 'About Us',
-    icon: {
-      name: 'email',
-      backgroundColor: colors.logo
+      backgroundColor: colors.secondary
     },
     targetScreen: routes.MESSAGES
   }

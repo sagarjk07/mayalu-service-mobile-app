@@ -1,41 +1,53 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 
 import { Image } from 'react-native-expo-image-cache';
 
 import AppText from '../components/AppText';
 import { ListItem } from '../components/Lists';
 
+import ContactSellerForm from "../components/ContactSellerForm";
+
 import colors from '../config/colors';
 
 function ListingDetailsScreen({ route }) {
   const listing = route.params;
   return (
-    <View>
-      <Image
-        tint={'light'}
-        style={styles.image}
-        uri={listing.images[0].url}
-        preview={{ uri: listing.images[0].thumbnailUrl }}
-      />
-      <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>{listing.title}</AppText>
-        <AppText style={styles.price}>${listing.price}</AppText>
-        <View style={styles.userContainer}>
-          <ListItem
-            subtitle={'5 Listing'}
-            title={'Sujit Kumar Libi'}
-            image={require('../assets/default.png')}
-          />
+    <ScrollView style={styles.container}>
+      <KeyboardAvoidingView
+        behavior="position"
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
+      >
+        <Image
+          tint={'light'}
+          style={styles.image}
+          uri={listing.images[0].url}
+          preview={{ uri: listing.images[0].thumbnailUrl }}
+        />
+        <View style={styles.detailsContainer}>
+          <AppText style={styles.title}>{listing.title}</AppText>
+          <AppText style={styles.price}>${listing.price}</AppText>
+          <View style={styles.userContainer}>
+            <ListItem
+              subtitle={'5 Listing'}
+              title={'Sujit Kumar Libi'}
+              image={require('../assets/default.png')}
+            />
+          </View>
+          <ContactSellerForm listing={listing} />
         </View>
-      </View>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   )
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 15
+  },
   detailsContainer: {
-    padding: 20
+    paddingVertical: 5,
+    paddingHorizontal: 15
   },
   image: {
     width: '100%',
@@ -52,7 +64,7 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   },
   userContainer: {
-    marginVertical: 40
+    marginVertical: 5
   }
 });
 

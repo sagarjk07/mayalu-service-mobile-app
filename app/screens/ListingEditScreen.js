@@ -125,14 +125,14 @@ function ListingEditScreen() {
           maxLength={8}
           name="price"
           placeholder="Price"
-          width={120}
+        // width={120}
         />
         <Picker
           numberOfColumns={3}
           items={categories}
           name="category"
           placeholder="Category"
-          width={'50%'}
+          // width={'50%'}
           PickerItemComponent={CategoryPickerItem}
         />
         <FormField

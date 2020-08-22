@@ -9,20 +9,22 @@ import routes from '../navigation/routes';
 function WelcomeScreen({ navigation }) {
   return (
     <Screen>
-      <ImageBackground
+      {/* <ImageBackground
         blurRadius={5}
         style={styles.background}
         source={require('../assets/background.jpg')}
-      >
+      > */}
+      <View style={styles.background}>
         <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={require('../assets/logo-red.png')}></Image>
-          <Text style={styles.tagline}>Sell What You Don't Need</Text>
+          <Image style={styles.logo} source={require('../assets/logo-red.png')} />
+          <Text style={styles.tagline}>{'Committed Towards Your Services'}</Text>
         </View>
         <View style={styles.buttonContainer}>
           <AppButton title={'Login'} onPress={() => navigation.navigate(routes.LOGIN)} />
           <AppButton title={'Register'} onPress={() => navigation.navigate(routes.REGISTER)} color={'secondary'} />
         </View>
-      </ImageBackground>
+      </View>
+      {/* </ImageBackground> */}
     </Screen>
   )
 }
@@ -31,14 +33,14 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     justifyContent: 'flex-end',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   buttonContainer: {
     padding: 20,
-    width: '100%'
+    width: '100%',
   },
   logo: {
-    width: 100,
+    width: '100%',
     height: 100
   },
   logoContainer: {
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   tagline: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: '600',
     paddingVertical: 20
   }

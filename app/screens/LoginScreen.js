@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 import * as Yup from 'yup';
 
@@ -67,12 +67,11 @@ const styles = StyleSheet.create({
     padding: 10
   },
   logo: {
-    width: 80,
-    height: 80,
-    marginTop: 50,
-    marginBottom: 20,
-    alignSelf: 'center',
-  }
+    height: 100,
+    width: '90%',
+    marginVertical: 20,
+    alignSelf: 'center'
+  },
 });
 
 export default LoginScreen;

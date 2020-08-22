@@ -21,6 +21,15 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
+    },
+    "sdkVersion": "38.0.0",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "description": "A marketplace for selling the stuff you don't need anymore.",
+    "notification": {
+      "iosDisplayInForeground": true
     }
   }
 }
