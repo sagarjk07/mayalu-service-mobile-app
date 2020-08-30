@@ -1,6 +1,6 @@
 export default {
   // primary: '#fc5c65',
-  logo: rgb(209, 47, 35),
+  logo: 'rgb(209, 47, 35)',
   primary: '#1e90ff',
   secondary: '#4ecdc4',
   black: '#000000',

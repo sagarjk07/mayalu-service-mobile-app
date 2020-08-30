@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, ActivityIndicator } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 
 import Card from '../components/Card';
 import Screen from '../components/Screen';
@@ -16,6 +16,7 @@ import listingsApi from '../api/listings';
 
 function ListingsScreen({ navigation }) {
   const { data: listings, error, loading, request: loadListings } = useApi(listingsApi.getListings)
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     loadListings();
@@ -31,7 +32,7 @@ function ListingsScreen({ navigation }) {
         </>}
         <FlatList
           data={listings}
-          keyExtractor={listing => listing.id.toString()}
+          keyExtractor={listing => listing._id.toString()}
           renderItem={({ item }) =>
             <Card
               title={item.title}
@@ -41,6 +42,10 @@ function ListingsScreen({ navigation }) {
               onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
             />
           }
+          refreshing={refreshing}
+          onRefresh={() => {
+            loadListings()
+          }}
         />
       </Screen>
     </>
