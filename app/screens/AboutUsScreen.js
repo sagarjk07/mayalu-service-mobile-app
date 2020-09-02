@@ -1,69 +1,29 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, Image, Dimensions, Text } from 'react-native';
 
-import Icon from '../components/Icon';
 import Screen from '../components/Screen';
-import { ListItem, ListItemSeparator } from '../components/Lists';
 
 import colors from '../config/colors';
-import routes from '../navigation/routes';
 
-import useAuth from '../auth/useAuth';
+let dimensions = Dimensions.get("window");
+let imageHeight = Math.round((dimensions.width * 9) / 16);
+let imageWidth = dimensions.width;
 
-const menuItems = [
-  {
-    title: 'My Listings',
-    icon: {
-      name: 'format-list-bulleted',
-      backgroundColor: colors.primary
-    }
-  },
-  {
-    title: 'My Messages',
-    icon: {
-      name: 'email',
-      backgroundColor: colors.secondary
-    },
-    targetScreen: routes.MESSAGES
-  }
-]
-
-function AccountScreen({ navigation }) {
-  const { user, logout } = useAuth();
-
+function AboutUsScreen() {
   return (
     <Screen style={styles.screen}>
-      <View style={styles.container}>
-        <ListItem
-          title={user.name}
-          subtitle={user.email}
-          image={require('../assets/default.png')}
-        />
+      <View style={styles.imageContainer}>
+        <Image style={styles.image} source={require('../assets/mayaluservice.jpg')} />
       </View>
       <View style={styles.container}>
-        <FlatList
-          data={menuItems}
-          keyExtractor={menuItem => menuItem.title}
-          renderItem={({ item }) =>
-            <ListItem
-              title={item.title}
-              IconComponent={
-                <Icon name={item.icon.name} backgroundColor={item.icon.backgroundColor} />
-              }
-              onPress={() => navigation.navigate(item.targetScreen)}
-            />
-          }
-          ItemSeparatorComponent={ListItemSeparator}
-        />
+        <Text style={{ fontSize: 18, fontWeight: 'bold', paddingVertical: 10 }}>Service Charges/Moving Rate (minimum 2 hour)</Text>
+        <Text style={{ fontSize: 14, paddingBottom: 10 }}>*1 man and van $60/hr</Text>
+        <Text style={{ fontSize: 14, paddingBottom: 10 }}>*2 man and van $85/hr</Text>
+        <Text style={{ fontSize: 14, paddingBottom: 10 }}>*Interstate removal $1 per km</Text>
       </View>
-      <View>
-        <ListItem
-          title={'Logout'}
-          IconComponent={
-            <Icon name={'logout'} backgroundColor={colors.warning} />
-          }
-          onPress={() => logout()}
-        />
+      <View style={styles.container}>
+        <Text style={{ fontSize: 18, fontWeight: 'bold', paddingVertical: 10 }}>Who are we?</Text>
+        <Text style={{ fontSize: 14, paddingBottom: 10 }}>We are professional Removal company based on Sydney including interstate Removals . We do Buy and Sell Second hand Household stuff</Text>
       </View>
     </Screen>
   )
@@ -71,11 +31,23 @@ function AccountScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: 20,
+    margin: 10,
+    paddingHorizontal: 10,
+    backgroundColor: 'white',
+    borderRadius: 6
+  },
+  imageContainer: {
+    width: imageWidth,
+    height: imageHeight,
+  },
+  image: {
+    flex: 1,
+    width: null,
+    height: null,
   },
   screen: {
     backgroundColor: colors.light
   }
 });
 
-export default AccountScreen;
+export default AboutUsScreen;

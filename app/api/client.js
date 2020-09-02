@@ -3,7 +3,8 @@ import cache from '../utility/cache';
 import authStorage from '../auth/storage';
 
 const apiClient = create({
-  baseURL: 'http://192.168.2.102:3000/api',
+  // baseURL: 'http://192.168.2.102:3000/api',
+  baseURL: 'https://ancient-cliffs-47083.herokuapp.com/api',
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {
