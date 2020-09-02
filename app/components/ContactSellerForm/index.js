@@ -12,7 +12,7 @@ function ContactSellerForm({ listing }) {
   const handleSubmit = async ({ message }, { resetForm }) => {
     Keyboard.dismiss();
 
-    const result = await messagesApi.send(message, listing.id);
+    const result = await messagesApi.send(message, listing);
 
     if (!result.ok) {
       console.log("Error", result);

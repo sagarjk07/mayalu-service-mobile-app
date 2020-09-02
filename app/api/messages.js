@@ -2,10 +2,10 @@ import client from './client';
 
 const endpoint = '/messages';
 
-const send = (message, listingId) =>
+const send = (message, listingDetail) =>
   client.post(endpoint, {
     message,
-    listingId
+    listingDetail
   });
 
 export default {
